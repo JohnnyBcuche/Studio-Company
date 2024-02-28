@@ -105,6 +105,7 @@
       z-index: 200;
 
       opacity: 0;
+      visibility: hidden;
       width: 0;
       transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
@@ -120,7 +121,7 @@
       &:link,
       &:visited {
         display: inline-block;
-        font-size: 7rem;
+        font-size: 6.5rem;
         font-weight: 300;
         padding: 1rem 2rem;
         color: $color-yellow-green;
@@ -136,7 +137,7 @@
         transition: all 0.4s;
 
         @include respond(phone) {
-          font-size: 5rem;
+          font-size: 4rem;
         }
       }
 
@@ -153,6 +154,7 @@
     }
     &--checkbox:checked ~ &--nav {
       opacity: 1;
+      visibility: visible;
       width: 100%;
     }
     &--checkbox:checked + &--btn &--icon {
