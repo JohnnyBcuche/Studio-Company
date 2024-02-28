@@ -158,7 +158,6 @@
     @include center;
 
     min-width: 75%;
-    max-height: 90dvh;
     height: auto;
     padding: 4rem;
     background-color: $color-purple;
@@ -178,11 +177,21 @@
     }
     @include respond(phone) {
       min-width: 90%;
+      padding: 2rem;
+      grid-gap: 2rem;
     }
   }
 
   &__left {
     text-align: center;
+    @include respond(phone) {
+      h3 {
+        font-size: 2.6rem;
+      }
+      p {
+        font-size: 2.4rem;
+      }
+    }
   }
   &__form {
     &--label {
