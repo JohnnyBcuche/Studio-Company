@@ -1,0 +1,26 @@
+// Colors
+$color-white-smoke: #f9f9f9;
+$color-purple: #361281;
+$color-purple-light: #987dd3;
+$color-orange: #ff6f1f;
+$color-deep-pink: #ff2473;
+$color-aqua: #54f2f2;
+$color-yellow-green: #d5ff2f;
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Fonts
+$font-aspergit: "Aspergit";
+$font-futura: "FuturaPT";
+
+@font-face {
+  font-family: $font-aspergit;
+  src: url("../../assets/fonts/asperagit/Aspergit\ Light.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: $font-futura;
+  src: url("../../assets/fonts/futura/FuturaPTLight.otf") format("opentype");
+}

@@ -1,0 +1,105 @@
+@use "../abstracts" as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+  scroll-behavior: smooth;
+
+  @include respond(tab-land) {
+    font-size: 50%;
+  }
+}
+
+body {
+  background-color: $color-purple;
+  color: $color-white;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  font-family: "FuturaPT", sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+::selection {
+  background-color: $color-yellow-green;
+  color: $color-purple;
+}
+
+.image-fix {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.social__item {
+  padding-bottom: 2rem;
+}
+.social__link {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: $color-white;
+    background-color: $color-purple;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: $color-yellow-green;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+    transform: rotate(5deg) scale(1.3);
+  }
+}
+
+.container {
+  margin: 3rem 10% 0;
+  @include respond(phone) {
+    margin: 3rem 5%;
+  }
+}
+
+// Layout
+.margin__top {
+  margin-top: 5rem;
+  &--xsmall {
+    margin-top: 1.5rem;
+  }
+  &--small {
+    margin-top: 3rem;
+  }
+  &--large {
+    margin-top: 7rem;
+  }
+  &--xlarge {
+    margin-top: 10rem;
+  }
+}
+
+.margin__vertical {
+  margin: 5rem 0;
+  &--xsmall {
+    margin: 1.5rem 0;
+  }
+  &--small {
+    margin: 3rem 0;
+  }
+  &--large {
+    margin: 7rem 0;
+  }
+  &--xlarge {
+    margin: 10rem 0;
+  }
+}

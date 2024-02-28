@@ -1,0 +1,209 @@
+@use "../abstracts" as *;
+
+.socials {
+  position: fixed;
+  top: 20rem;
+  right: 5rem;
+  z-index: 90;
+  &__list {
+    text-align: center;
+  }
+
+  @include respond(tab-port) {
+    top: 12rem;
+    right: 2rem;
+  }
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.navigation {
+  @include clearfix;
+
+  &__list {
+    display: inline-flex;
+    float: right;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    float: right;
+    @include respond(tab-port) {
+      display: block;
+    }
+
+    &--checkbox {
+      display: none;
+    }
+    &--btn {
+      background-color: $color-white;
+      border-radius: 50%;
+      position: fixed;
+      height: 7rem;
+      width: 7rem;
+      top: 3rem;
+      right: 10%;
+      z-index: 300;
+      text-align: center;
+      cursor: pointer;
+
+      @include respond(phone) {
+        right: 5%;
+      }
+    }
+    &--icon {
+      position: relative;
+      margin-top: 3.5rem;
+      &,
+      &::before,
+      &::after {
+        width: 3rem;
+        height: 3px;
+        background-color: $color-purple;
+        display: inline-block;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all 0.2s;
+      }
+
+      &::before {
+        top: -1rem;
+      }
+      &::after {
+        top: 1rem;
+      }
+    }
+    &--background {
+      height: 6rem;
+      width: 6rem;
+      border-radius: 50%;
+      position: fixed;
+      top: 3.5rem;
+      right: 10%;
+      background-image: radial-gradient($color-purple, $color-purple-light);
+      z-index: 100;
+      transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+      @include respond(phone) {
+        right: 5%;
+      }
+    }
+    &--nav {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 200;
+
+      opacity: 0;
+      width: 0;
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    &--list {
+      @include center;
+      text-align: center;
+      width: 100%;
+    }
+    &--item {
+      margin: 1rem;
+    }
+    &--link {
+      &:link,
+      &:visited {
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: 300;
+        padding: 1rem 2rem;
+        color: $color-yellow-green;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-image: linear-gradient(
+          120deg,
+          transparent 0%,
+          transparent 50%,
+          $color-yellow-green 50%
+        );
+        background-size: 230%;
+        transition: all 0.4s;
+      }
+
+      &:hover,
+      &:active {
+        background-position: 100%;
+        color: $color-purple;
+        transform: translateX(1rem);
+      }
+    }
+
+    &--checkbox:checked ~ &--background {
+      transform: scale(60);
+    }
+    &--checkbox:checked ~ &--nav {
+      opacity: 1;
+      width: 100%;
+    }
+    &--checkbox:checked + &--btn &--icon {
+      background-color: transparent;
+    }
+    &--checkbox:checked + &--btn &--icon::before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+    &--checkbox:checked + &--btn &--icon::after {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+  }
+
+  &__item {
+    margin-right: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid $color-white;
+
+    &:first-child {
+      border: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      padding: 0 0.5rem;
+      text-decoration: none;
+      color: $color-white;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-yellow-green 50%
+      );
+      background-size: 230%;
+      transition: all 0.4s;
+    }
+    &:hover,
+    &:active {
+      text-decoration: none;
+      color: $color-purple;
+      background-position: 100%;
+      transform: translateX(1rem);
+    }
+  }
+}
+
+.logo {
+  float: left;
+}

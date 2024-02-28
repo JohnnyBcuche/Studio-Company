@@ -1,0 +1,66 @@
+@use "../abstracts" as *;
+
+.text-color-green {
+  color: $color-yellow-green;
+}
+.text-color-white {
+  color: $color-white;
+}
+
+.heading {
+  &__1 {
+    @include font-prop($font-aspergit, 700, 10rem, uppercase);
+    @include respond(tab-land) {
+      font-size: 8rem;
+    }
+    @include respond(tab-port) {
+      font-size: 6rem;
+    }
+    @include respond(phone) {
+      font-size: 5.5rem;
+    }
+  }
+
+  &__2 {
+    @include font-prop($font-aspergit, 700, 8.4rem, uppercase);
+    @include respond(tab-land) {
+      font-size: 6rem;
+    }
+    @include respond(tab-port) {
+      font-size: 5rem;
+    }
+  }
+
+  &__3 {
+    @include font-prop($font-aspergit, 700, 5rem, null);
+    @include respond(tab-land) {
+      font-size: 4.5rem;
+    }
+    @include respond(tab-port) {
+      font-size: 4rem;
+    }
+  }
+
+  &__4 {
+    @include font-prop($font-aspergit, 700, 4rem, null);
+    @include respond(tab-port) {
+      font-size: 3.8rem;
+    }
+  }
+
+  &__5 {
+    @include font-prop($font-aspergit, 700, 3rem, null);
+  }
+
+  &__body {
+    @include font-prop($font-futura, 300, 3rem, null);
+  }
+
+  &__small {
+    @include font-prop($font-futura, 300, 2.3rem, null);
+  }
+
+  &__cta {
+    @include font-prop($font-aspergit, 700, 1.8rem, uppercase);
+  }
+}
